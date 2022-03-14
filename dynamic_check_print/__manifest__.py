@@ -7,6 +7,8 @@
     """,
     'author': "Gt Alchemy Development",
     'license': 'LGPL-3',
+    'price': 35.00,
+    'currency': 'USD',
     'support': 'developmentalchemygx@gmail.com',
     'category': 'Account',
     'version': '15.1.1',
