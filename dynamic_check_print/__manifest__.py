@@ -13,9 +13,12 @@
     'category': 'Account',
     'version': '15.1.1',
     'data': [
-        'views/account_payment.xml',
+        'security/dynamic_check_print.xml',
+        'security/ir.model.access.csv',
+        'views/account_journal.xml',
+        'views/format_checkprint.xml',
         #'reports/report_picking.xml',
     ],
     'images': ['static/description/banner.png'],
-    'depends': ['account_check_printing'],
+    'depends': ['account'],
 }

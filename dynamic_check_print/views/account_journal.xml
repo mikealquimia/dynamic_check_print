@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="account_journal_format_checkprint_form_inherit" model="ir.ui.view">
+        <field name="name">Format Check Print</field>
+        <field name="model">account.journal</field>
+        <field name="inherit_id" ref="account.view_account_journal_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='type']" position="after">
+                <field name="checkprint_report" attrs="{'invisible': [('type', '!=', 'bank')]}" widget="many2many_tags" groups="dynamic_check_print.group_formar_checkprint_user"/>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>
