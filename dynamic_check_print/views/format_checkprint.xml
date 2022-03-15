@@ -24,68 +24,118 @@
                     <button string="Set Done" name="set_done" type="object" states="draft"/>
                     <field name="state" widget="statusbar"/>
                 </header>
-                <sheet attrs="{'readonly': [('state', '=', 'done')]}">
+                <sheet>
                     <div class="oe_title">
                         <label for="name" class="oe_edit_only"/>
                         <h1><field name="name" required="1" class="oe_inline"/></h1>
                     </div>
-                    <field name="journal_id" readonly="1" widget="many2many_tags"/>
-                    <field name="paper_format" options="{'no_create': True}"/>
-                    <field name="report_id" invisible="0"/>
                     <group>        
-                        <group>
+                        <group attrs="{'readonly': [('state', '=', 'done')]}">
                             <field name="date"/>
                             <field name="partner"/>
                             <field name="amount"/>
                         </group>
-                        <group>
+                        <group attrs="{'readonly': [('state', '=', 'done')]}">
                             <field name="amount_letters"/>
                             <field name="negotiable"/>
                             <field name="voucher"/>
                         </group>
                     </group>
-                    <notebook>
+                    <notebook attrs="{'readonly': [('state', '=', 'done')]}">
                         <page name="date" string="Date" attrs="{'invisible': [('date', '=', False)]}">
                             <group>
-                                <field name="type_date"/>
-                                <field name="date_field" options="{'no_create': True}" attrs="{'required': [('date', '=', True)]}"/>
-                                <field name="text_transform_date"/>
+                                <group string="Location">
+                                    <field name="top_date"/>
+                                    <field name="left_date"/>
+                                </group>
+                                <group string="Properties">
+                                    <field name="type_date"/>
+                                    <field name="date_field" options="{'no_create': True}" attrs="{'required': [('date', '=', True)]}"/>
+                                    <field name="text_transform_date"/>
+                                </group>
                             </group>
                         </page>
                         <page name="partner" string="Partner" attrs="{'invisible': [('partner', '=', False)]}">
                             <group>
-                                <field name="type_partner"/>
-                                <field name="text_transform_partner"/>
+                                <group string="Location">
+                                    <field name="top_partner"/>
+                                    <field name="left_partner"/>
+                                </group>
+                                <group string="Properties">
+                                    <field name="type_partner"/>
+                                    <field name="text_transform_partner"/>
+                                </group>
                             </group>
                         </page>
                         <page name="amount" string="Amount" attrs="{'invisible': [('amount', '=', False)]}">
                             <group>
-                                <field name="type_amount"/>
-                                <field name="pre_symbol" attrs="{'invisible': [('type_amount', '=', 'simple')]}"/>
-                                <field name="post_symbol" attrs="{'invisible': [('type_amount', '=', 'simple')]}"/>
-                                <field name="currency_amount"/>
+                                <group string="Location">
+                                    <field name="top_amount"/>
+                                    <field name="left_amount"/>
+                                </group>
+                                <group string="Properties">
+                                    <field name="type_amount"/>
+                                    <field name="pre_symbol" attrs="{'invisible': [('type_amount', '=', 'simple')]}"/>
+                                    <field name="post_symbol" attrs="{'invisible': [('type_amount', '=', 'simple')]}"/>
+                                    <field name="currency_amount"/>
+                                </group>
                             </group>
                         </page>
                         <page name="amount_letters" string="Amount in letters" attrs="{'invisible': [('amount_letters', '=', False)]}">
                             <group>
-                                <field name="text_transform_amount_letters"/>
-                                <field name="type_amount_letter"/>
-                                <field name="pre_symbol_letter" attrs="{'invisible': [('type_amount_letter', '=', 'simple')]}"/>
-                                <field name="post_symbol_letter" attrs="{'invisible': [('type_amount_letter', '=', 'simple')]}"/>
-                                <field name="currency_amount_letter"/>
+                                <group string="Location">
+                                    <field name="top_amount_letters"/>
+                                    <field name="left_amount_letters"/>
+                                </group>
+                                <group string="Properties">
+                                    <field name="text_transform_amount_letters"/>
+                                    <field name="type_amount_letter"/>
+                                    <field name="pre_symbol_letter" attrs="{'invisible': [('type_amount_letter', '=', 'simple')]}"/>
+                                    <field name="post_symbol_letter" attrs="{'invisible': [('type_amount_letter', '=', 'simple')]}"/>
+                                    <field name="currency_amount_letter"/>
+                                </group>
+                            </group>
+                        </page>
+                        <page name="negotiable" string="Not Negotiable" attrs="{'invisible': [('negotiable', '=', False)]}">
+                            <group>
+                                <group string="Location">
+                                    <field name="top_negotiable"/>
+                                    <field name="left_negotiable"/>
+                                </group>
                             </group>
                         </page>
                         <page name="voucher" string="Voucher" attrs="{'invisible': [('voucher', '=', False)]}">
                             <group>
-                                <field name="description"/>
-                                <field name="fields_description" options="{'no_create': True}" widget="many2many_tags" attrs="{'invisible': [('description', '!=', 'invoices')]}"/>
-                                <field name="field_description" options="{'no_create': True}" attrs="{'invisible': [('description', '!=', 'payment')]}"/>
-                                <field name="account_move"/>
-                                <field name="total_account_move" attrs="{'invisible': [('account_move', '=', False)]}"/>
+                                <group string="Location">
+                                </group>
+                                <group string="Properties">
+                                    <field name="description"/>
+                                    <field name="fields_description" options="{'no_create': True}" widget="many2many_tags" attrs="{'invisible': [('description', '!=', 'invoices')]}"/>
+                                    <field name="field_description" options="{'no_create': True}" attrs="{'invisible': [('description', '!=', 'payment')]}"/>
+                                    <field name="account_move"/>
+                                    <field name="total_account_move" attrs="{'invisible': [('account_move', '=', False)]}"/>
+                                </group>
+                            </group>
+                        </page>
+                        <page name="info" string="Info" groups="dynamic_check_print.group_formar_checkprint_manager">
+                            <group>
+                                <field name="page_height"/>
+                                <field name="page_width"/>
+                                <field name="orientation"/>
+                                <field name="paper_format" readonly="1"/>
+                                <field name="journal_id" readonly="1" widget="many2many_tags"/>
+                                <field name="report_id" readonly="1"/>
+                                <field name="view_id" readonly="1"/>
                             </group>
                         </page>
                     </notebook>
                 </sheet>
+                <div class="o_attachment_preview"/>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" groups="base.group_user"/>
+                        <field name="activity_ids"/>
+                        <field name="message_ids"/>
+                    </div>
             </form>
         </field>
     </record>
