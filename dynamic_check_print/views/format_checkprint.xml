@@ -106,14 +106,33 @@
                         </page>
                         <page name="voucher" string="Voucher" attrs="{'invisible': [('voucher', '=', False)]}">
                             <group>
-                                <group string="Location">
-                                </group>
-                                <group string="Properties">
+                                <group string="Description">
                                     <field name="description"/>
                                     <field name="fields_description" options="{'no_create': True}" widget="many2many_tags" attrs="{'invisible': [('description', '!=', 'invoices')]}"/>
                                     <field name="field_description" options="{'no_create': True}" attrs="{'invisible': [('description', '!=', 'payment')]}"/>
+                                </group>
+                                <group string="Account Move">
                                     <field name="account_move"/>
                                     <field name="total_account_move" attrs="{'invisible': [('account_move', '=', False)]}"/>
+                                </group>
+                                <group string="Location Account Move">
+                                    <field name="top_description"/>
+                                    <field name="left_description"/>
+                                </group>
+                                <group string="Location Account Move">
+                                    <field name="top_account_move"/>
+                                    <field name="left_account_move"/>
+                                    <separator string="Width Account Move"/>
+                                    <field name="width_code"/>
+                                    <field name="width_name"/>
+                                    <field name="width_credit"/>
+                                    <field name="width_debit"/>
+                                    <separator string="Totals Account Move"/>
+                                    <field name="top_total_account_move"/>
+                                    <field name="left_total_account_move"/>
+                                    <separator string="Width Totals Account Move"/>
+                                    <field name="width_total_debit"/>
+                                    <field name="width_total_credit"/>
                                 </group>
                             </group>
                         </page>

@@ -90,10 +90,25 @@ class FormatCheckPrint(models.Model):
         ('none', 'No Description'), 
         ('invoices', 'Fields in Invoice(s)'),
         ('payment', 'Field in Payment')], string="Description", default='none', tracking=True)
-    fields_description = fields.Many2many('ir.model.fields', string="Description fields", help="They will be separated by a comma", domain="[('model_id','=','account.move')]")
+    fields_description = fields.Many2many('ir.model.fields', string="Description fields", help="They will be separated by a comma", 
+        domain="['&', ('model_id'), '=', 'account.move'), '|', '|', '|', '|', '|', '|', ('ttype', '=', 'char'), ('ttype', '=', 'float'), ('ttype', '=', 'many2one'), ('ttype', '=', 'monetary'), ('ttype', '=', 'reference'), ('ttype', '=', 'selection'), ('ttype', '=', 'text')]")
     field_description = fields.Many2one('ir.model.fields', string="Description field", domain="['&',('ttype','=','date'),('model_id','=','account.payment')]")
+    top_description = fields.Float(string="Top Description (cm)")
+    left_description = fields.Float(string="Left Description (cm)")
+
     account_move = fields.Boolean(string="Account move")
+    top_account_move = fields.Float(string="Top Table Account Move (cm)")
+    left_account_move = fields.Float(string="Left Table Account Move (cm)")
+    width_code = fields.Float(string="Width Col Code (cm)")
+    width_name = fields.Float(string="Width Col Name (cm)")
+    width_credit = fields.Float(string="Width Col Credit (cm)")
+    width_debit = fields.Float(string="Width Col Debit (cm)")
+
     total_account_move = fields.Boolean(string="Totals")
+    top_total_account_move = fields.Float(string="Top Totals Account Move (cm)")
+    left_total_account_move = fields.Float(string="Left Totals Account Move (cm)")
+    width_total_debit = fields.Float(string="Width Col Total Debit (cm)")
+    width_total_credit = fields.Float(string="Width Col Total Credit (cm)")
     
     
     def set_draft(self):
@@ -166,6 +181,7 @@ class FormatCheckPrint(models.Model):
                                         {xml_partner}
                                     </div>
                                     """.format(xml_partner = partner, top_partner = self.top_partner, left_partner = self.left_partner)
+        
         if self.amount_letters:
             amount_letters = """<strong><!--"""
             currency_letter = self.env.company.currency_id.currency_unit_label
@@ -184,12 +200,84 @@ class FormatCheckPrint(models.Model):
                                     """.format(xml_amount_letter = amount_letters, top_amount_letters = self.top_amount_letters, left_amount_letters = self.left_amount_letters) 
         
         if self.negotiable:
-            arch_base += """<div style="font-size: 110%; position: absolute; top: 4.8cm; left: 4.6cm; width: 5cm">
+            arch_base += """<div style="font-size: 110%; position: absolute; top: {top_negotiable}cm; left: {left_negotiable}cm; width: 5cm">
                                         <strong>NO NEGOTIABLE</strong>
                                     </div>
                                     """.format(top_negotiable = self.top_negotiable, left_negotiable = self.left_negotiable)
-            
-            
+             
+        if self.voucher:
+            if self.description != 'none':
+                description = """<strong>"""
+                if self.description == 'payment':
+                    description += """<span t-esc="o.{field_description}">""".format(field_description = self.field_description.name)
+                if self.description == "invoices":
+                    fields_description = """"""
+                    for field_span in self.fields_description:
+                        if field_span.ttype == 'many2one':
+                            fields_description += """<span t-esc="o.{field_name}.name"/>, 
+                                                """.format(field_name = field_span.name)
+                        else:
+                            fields_description += """<span t-esc="o.{field_name}"/>, 
+                                                """.format(field_name = field_span.name)
+                    description += """<t t-foreach="o.invoice_vendor_bill_id t-as="invoice">
+                                                {fields_description}
+                                            </t>""".format(fields_description = fields_description)
+                arch_base += """<div style="position: absolute; top: {top_description}cm; left: {left_description}cm; width: 20cm">
+                                        <strong>
+                                            {xml_description}
+                                        </strong>
+                                    </div>
+                                    """.format(xml_description = description, top_description = self.top_description, left_description = self.left_description)
+        
+            if self.account_move:
+                arch_base += """<div style="font-size: 110%; position: absolute; top: {top_account_move}cm; left: {left_account_move}cm; width: 5cm">
+                                        <table>
+                                            <tbody>
+                                                <t t-set="debit" t-value="0"/>
+                                                <t t-set="credit" t-value="0"/>
+                                                <tr t-foreach="o.line_ids" t-as="l">
+                                                    <td style="font-size: 100%; width: {width_code}cm">
+                                                        <strong t-field="l.account_id.code"/>
+                                                    </td>
+                                                    <td style="font-size: 100%; width: {width_name}cm">
+                                                        <strong t-field="l.account_id.name"/>
+                                                    </td>
+                                                    <td style="font-size: 100%; width: {width_debit}cm; text-align:right;">
+                                                        """.format(top_account_move = self.top_account_move, left_account_move = self.left_account_move, width_code = self.width_code, width_name = self.width_name, width_debit = self.width_debit)
+                arch_base += str("""<strong t-field="l.debit" t-esc-options="{'widget': 'monetary', 'display_currency': o.currency_id}"/>
+                                                    """)
+                arch_base += """<t t-set="debit" t-value="debit+l.debit"/>
+                                                    </td>
+                                                    <td style="font-size: 100%; width: {width_credit}cm; text-align:right;">
+                                                        """.format(width_credit = self.width_credit)
+                arch_base += str("""<strong t-field="l.credit" t-esc-options="{'widget': 'monetary', 'display_currency': o.currency_id}"/>
+                                                        <t t-set="credit" t-value="credit+l.credit"/>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    """)
+
+            if self.total_account_move:
+                arch_base += """<div style="font-size: 110%; position: absolute; top: {top_total_account_move}cm; left: {left_total_account_move}cm; width: 5cm">
+                                        <table>
+                                            <tbody>
+                                                <tr t-foreach="o.line_ids" t-as="l">
+                                                    <td style="font-size: 100%; width: {width_total_credit}cm">
+                                                        """.format(top_total_account_move = self.top_total_account_move, left_total_account_move = self.left_total_account_move, width_total_credit = self.width_total_credit)
+                arch_base += str("""<strong t-esc="debit" t-options="{'widget': 'monetary', 'display_currency': o.currency_id}"/>
+                                                    </td>
+                                                    """)
+                arch_base += """<td style="font-size: 100%; width: {width_total_debit}cm">
+                                                        <strong t-esc="credit" t-options="{'widget': 'monetary', 'display_currency': o.currency_id}"/>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    """.format(width_total_debit = self.width_total_debit)
+
         arch_base += """
                                 </div>
                             </div>
