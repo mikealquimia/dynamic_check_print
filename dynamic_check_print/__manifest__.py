@@ -17,8 +17,7 @@
         'security/ir.model.access.csv',
         'views/account_journal.xml',
         'views/format_checkprint.xml',
-        #'reports/report_picking.xml',
     ],
     'images': ['static/description/banner.png'],
-    'depends': ['account'],
+    'depends': ['account', 'account_check_printing'],
 }

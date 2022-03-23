@@ -115,11 +115,11 @@
                                     <field name="account_move"/>
                                     <field name="total_account_move" attrs="{'invisible': [('account_move', '=', False)]}"/>
                                 </group>
-                                <group string="Location Account Move">
+                                <group string="Location Description" attrs="{'invisible': [('description', '=', 'none')]}">
                                     <field name="top_description"/>
                                     <field name="left_description"/>
                                 </group>
-                                <group string="Location Account Move">
+                                <group string="Location Account Move" attrs="{'invisible': [('account_move', '=', False)]}">
                                     <field name="top_account_move"/>
                                     <field name="left_account_move"/>
                                     <separator string="Width Account Move"/>

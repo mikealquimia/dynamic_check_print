@@ -90,8 +90,7 @@ class FormatCheckPrint(models.Model):
         ('none', 'No Description'), 
         ('invoices', 'Fields in Invoice(s)'),
         ('payment', 'Field in Payment')], string="Description", default='none', tracking=True)
-    fields_description = fields.Many2many('ir.model.fields', string="Description fields", help="They will be separated by a comma", 
-        domain="['&', ('model_id'), '=', 'account.move'), '|', '|', '|', '|', '|', '|', ('ttype', '=', 'char'), ('ttype', '=', 'float'), ('ttype', '=', 'many2one'), ('ttype', '=', 'monetary'), ('ttype', '=', 'reference'), ('ttype', '=', 'selection'), ('ttype', '=', 'text')]")
+    fields_description = fields.Many2many('ir.model.fields', string="Description fields", help="They will be separated by a comma", domain="['&', ('model_id', '=', 'account.move'), '|', '|', '|', '|', '|', '|', ('ttype', '=', 'char'), ('ttype', '=', 'float'), ('ttype', '=', 'many2one'), ('ttype', '=', 'monetary'), ('ttype', '=', 'reference'), ('ttype', '=', 'selection'), ('ttype', '=', 'text')]")
     field_description = fields.Many2one('ir.model.fields', string="Description field", domain="['&',('ttype','=','date'),('model_id','=','account.payment')]")
     top_description = fields.Float(string="Top Description (cm)")
     left_description = fields.Float(string="Left Description (cm)")
@@ -118,14 +117,14 @@ class FormatCheckPrint(models.Model):
         return self.write({'state': 'draft'})
     
     def set_done(self):
-        name_view = 'Report ' + str(self.name)
+        name_view = 'Check ' + str(self.name)
         name_report = str("format_checkprint.")+ str(name_view.replace(" ","_"))
         name_report = name_report.lower()
         arch_base = """<?xml version="1.0"?>
                 <t t-name="{xml_report_name}">
                     <t t-call="web.html_container">
                         <t t-foreach="docs" t-as="o">
-                            <!--<t t-set="amount_letters" t-value="num_a_letras(o.amount)"/>-->
+                            <t t-esc="o.check_do()"/>
                             <div class="article">
                                 <div class="page" style="font-family:'cool_font'">                            
                                     """.format(xml_report_name = name_report)
@@ -183,17 +182,17 @@ class FormatCheckPrint(models.Model):
                                     """.format(xml_partner = partner, top_partner = self.top_partner, left_partner = self.left_partner)
         
         if self.amount_letters:
-            amount_letters = """<strong><!--"""
+            amount_letters = """<strong>"""
             currency_letter = self.env.company.currency_id.currency_unit_label
             if self.type_amount_letter == 'simple':
-                amount_letters+=str("""<strong t-esc="'{:,.2f}'.format(amount_letters)"/>""")
+                amount_letters+=str("""<strong t-esc="o.check_amount_in_words"/>""")
             if self.type_amount_letter == 'symbol':
                 amount_letters+="""{pre_symbol}""".format(pre_symbol = self.pre_symbol_letter)
-                amount_letters+=str("""<strong t-esc="'{:,.2f}'.format(amount_letters)"/>""")
+                amount_letters+=str("""<strong t-esc="o.check_amount_in_words"/>""")
                 amount_letters+="""{post_symbol}""".format(post_symbol = self.post_symbol_letter)
             if self.currency_amount_letter == 'after':
                 amount_letters+="""{currency}""".format(currency = currency_letter)
-            amount_letters += """--></strong>"""
+            amount_letters += """</strong>"""
             arch_base += """<div style="font-size: 110%; text-transform: capitalize; position: absolute; top: {top_amount_letters}cm; left: {left_amount_letters}cm; width:18cm; font-family:'Calibri'; letter-spacing: 0.1em">
                                         {xml_amount_letter}
                                     </div>
@@ -207,9 +206,12 @@ class FormatCheckPrint(models.Model):
              
         if self.voucher:
             if self.description != 'none':
-                description = """<strong>"""
+                description = """<strong>
+                                            """
+                
                 if self.description == 'payment':
-                    description += """<span t-esc="o.{field_description}">""".format(field_description = self.field_description.name)
+                    description += """<span t-esc="o.{field_description}"/>""".format(field_description = self.field_description.name)
+                    
                 if self.description == "invoices":
                     fields_description = """"""
                     for field_span in self.fields_description:
@@ -219,23 +221,23 @@ class FormatCheckPrint(models.Model):
                         else:
                             fields_description += """<span t-esc="o.{field_name}"/>, 
                                                 """.format(field_name = field_span.name)
-                    description += """<t t-foreach="o.invoice_vendor_bill_id t-as="invoice">
+                    description += """<t t-foreach="o.invoice_vendor_bill_id" t-as="invoice">
                                                 {fields_description}
                                             </t>""".format(fields_description = fields_description)
+                
+                description += """</strong>"""
                 arch_base += """<div style="position: absolute; top: {top_description}cm; left: {left_description}cm; width: 20cm">
-                                        <strong>
-                                            {xml_description}
-                                        </strong>
+                                        {xml_description}
                                     </div>
                                     """.format(xml_description = description, top_description = self.top_description, left_description = self.left_description)
         
             if self.account_move:
-                arch_base += """<div style="font-size: 110%; position: absolute; top: {top_account_move}cm; left: {left_account_move}cm; width: 5cm">
+                arch_base += """<div style="font-size: 110%; position: absolute; top: {top_account_move}cm; left: {left_account_move}cm">
                                         <table>
                                             <tbody>
                                                 <t t-set="debit" t-value="0"/>
                                                 <t t-set="credit" t-value="0"/>
-                                                <tr t-foreach="o.line_ids" t-as="l">
+                                                 <tr t-foreach="o.line_ids" t-as="l">
                                                     <td style="font-size: 100%; width: {width_code}cm">
                                                         <strong t-field="l.account_id.code"/>
                                                     </td>
@@ -270,13 +272,14 @@ class FormatCheckPrint(models.Model):
                                                     </td>
                                                     """)
                 arch_base += """<td style="font-size: 100%; width: {width_total_debit}cm">
-                                                        <strong t-esc="credit" t-options="{'widget': 'monetary', 'display_currency': o.currency_id}"/>
+                                                        """.format(width_total_debit = self.width_total_debit)
+                arch_base += str("""<strong t-esc="credit" t-options="{'widget': 'monetary', 'display_currency': o.currency_id}"/>
                                                     </td>
                                                 </tr>
                                             </tbody>
                                         </table>
                                     </div>
-                                    """.format(width_total_debit = self.width_total_debit)
+                                    """)
 
         arch_base += """
                                 </div>
