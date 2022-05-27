@@ -136,7 +136,7 @@
                                 </group>
                             </group>
                         </page>
-                        <page name="info" string="Info" groups="dynamic_check_print.group_formar_checkprint_manager">
+                        <page name="info" string="Paperformat" groups="dynamic_check_print.group_formar_checkprint_manager">
                             <group>
                                 <field name="page_height"/>
                                 <field name="page_width"/>

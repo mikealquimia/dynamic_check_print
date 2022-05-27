@@ -91,7 +91,7 @@ class FormatCheckPrint(models.Model):
         ('invoices', 'Fields in Invoice(s)'),
         ('payment', 'Field in Payment')], string="Description", default='none', tracking=True)
     fields_description = fields.Many2many('ir.model.fields', string="Description fields", help="They will be separated by a comma", domain="['&', ('model_id', '=', 'account.move'), '|', '|', '|', '|', '|', '|', ('ttype', '=', 'char'), ('ttype', '=', 'float'), ('ttype', '=', 'many2one'), ('ttype', '=', 'monetary'), ('ttype', '=', 'reference'), ('ttype', '=', 'selection'), ('ttype', '=', 'text')]")
-    field_description = fields.Many2one('ir.model.fields', string="Description field", domain="['&',('ttype','=','date'),('model_id','=','account.payment')]")
+    field_description = fields.Many2one('ir.model.fields', string="Description field", domain="['&',('ttype','=','char'),('model_id','=','account.payment')]")
     top_description = fields.Float(string="Top Description (cm)")
     left_description = fields.Float(string="Left Description (cm)")
 
@@ -124,7 +124,7 @@ class FormatCheckPrint(models.Model):
                 <t t-name="{xml_report_name}">
                     <t t-call="web.html_container">
                         <t t-foreach="docs" t-as="o">
-                            <t t-esc="o.check_do()"/>
+                            <t  t-if="o.state == 'posted'" t-esc="o.check_do()"/>
                             <div class="article">
                                 <div class="page" style="font-family:'cool_font'">                            
                                     """.format(xml_report_name = name_report)
@@ -155,7 +155,7 @@ class FormatCheckPrint(models.Model):
                 amount+=str("""<strong t-esc="'{:,.2f}'.format(o.amount)"/>""")
             if self.type_amount == 'symbol':
                 amount+="""{pre_symbol}""".format(pre_symbol = self.pre_symbol)
-                amount+=str("""<strong t-esc="'{:,.2f}'.format(amount)"/>""")
+                amount+=str("""<strong t-esc="'{:,.2f}'.format(o.amount)"/>""")
                 amount+="""{post_symbol}""".format(post_symbol = self.post_symbol)
             if self.currency_amount == 'after':
                 amount+="""{currency}""".format(currency = currency_symbol)
