@@ -6,6 +6,7 @@
         Add signature field in Alborán depending on validation in Stock Picking type, which is printed in Stock Picking report
     """,
     'author': "Gt Alchemy Development",
+    'live_test_url': 'https://youtu.be/QsPxF8xqlUw',
     'license': 'LGPL-3',
     'price': 35.00,
     'currency': 'USD',
