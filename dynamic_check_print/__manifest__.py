@@ -1,9 +1,16 @@
 # -*- coding: utf-8 -*-
 {
     'name': "Check Printing Format",
-    'summary': """Scan your check and adjust it to be printed""",
+    'summary': """Scan your check and adjust it to be printed
+    Crea y configura cheques para imprimir desde Odoo
+    Create and configure checks to print from Odoo
+    Créer et configurer des chèques à imprimer depuis Odoo
+    """,
     'description': """
-        Add signature field in Alborán depending on validation in Stock Picking type, which is printed in Stock Picking report
+        Scan your check and adjust it to be printed
+    Crea y configura cheques para imprimir desde Odoo
+    Create and configure checks to print from Odoo
+    Créer et configurer des chèques à imprimer depuis Odoo
     """,
     'author': "Gt Alchemy Development",
     'live_test_url': 'https://youtu.be/QsPxF8xqlUw',
