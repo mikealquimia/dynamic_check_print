@@ -47,6 +47,8 @@
                                 <group string="Location">
                                     <field name="top_date"/>
                                     <field name="left_date"/>
+                                    <field name="width_date"/>
+                                    <field name="height_date"/>
                                 </group>
                                 <group string="Properties">
                                     <field name="type_date"/>
@@ -60,6 +62,8 @@
                                 <group string="Location">
                                     <field name="top_partner"/>
                                     <field name="left_partner"/>
+                                    <field name="width_partner"/>
+                                    <field name="height_partner"/>
                                 </group>
                                 <group string="Properties">
                                     <field name="type_partner"/>
@@ -72,6 +76,8 @@
                                 <group string="Location">
                                     <field name="top_amount"/>
                                     <field name="left_amount"/>
+                                    <field name="width_amount"/>
+                                    <field name="height_amount"/>
                                 </group>
                                 <group string="Properties">
                                     <field name="type_amount"/>
@@ -86,6 +92,8 @@
                                 <group string="Location">
                                     <field name="top_amount_letters"/>
                                     <field name="left_amount_letters"/>
+                                    <field name="width_amount_letters"/>
+                                    <field name="height_amount_letters"/>
                                 </group>
                                 <group string="Properties">
                                     <field name="text_transform_amount_letters"/>
@@ -101,6 +109,8 @@
                                 <group string="Location">
                                     <field name="top_negotiable"/>
                                     <field name="left_negotiable"/>
+                                    <field name="width_negotiable"/>
+                                    <field name="height_negotiable"/>
                                 </group>
                             </group>
                         </page>
@@ -111,32 +121,64 @@
                                     <field name="fields_description" options="{'no_create': True}" widget="many2many_tags" attrs="{'invisible': [('description', '!=', 'invoices')]}"/>
                                     <field name="field_description" options="{'no_create': True}" attrs="{'invisible': [('description', '!=', 'payment')]}"/>
                                 </group>
+                                <group string="Location Description" attrs="{'invisible': [('description', '=', 'none')]}">
+                                    <field name="top_description"/>
+                                    <field name="left_description"/>
+                                    <field name="width_description"/>
+                                    <field name="height_description"/>
+                                </group>
+                            </group>
+                            <group>
                                 <group string="Account Move">
                                     <field name="account_move"/>
                                     <field name="total_account_move" attrs="{'invisible': [('account_move', '=', False)]}"/>
                                 </group>
-                                <group string="Location Description" attrs="{'invisible': [('description', '=', 'none')]}">
-                                    <field name="top_description"/>
-                                    <field name="left_description"/>
-                                </group>
                                 <group string="Location Account Move" attrs="{'invisible': [('account_move', '=', False)]}">
                                     <field name="top_account_move"/>
                                     <field name="left_account_move"/>
+                                    <field name="width_account_move"/>
+                                    <field name="height_account_move"/>
                                     <separator string="Width Account Move"/>
                                     <field name="width_code"/>
                                     <field name="width_name"/>
                                     <field name="width_credit"/>
                                     <field name="width_debit"/>
-                                    <separator string="Totals Account Move"/>
-                                    <field name="top_total_account_move"/>
-                                    <field name="left_total_account_move"/>
-                                    <separator string="Width Totals Account Move"/>
+                                </group>
+                            </group>
+                            <group attrs="{'invisible': [('total_account_move', '=', False)]}">
+                                <group string="Totals Debit">
+                                    <field name="top_total_debit"/>
+                                    <field name="left_total_debit"/>
                                     <field name="width_total_debit"/>
+                                    <field name="height_total_debit"/>
+                                </group>
+                                <group string="Total Credit">
+                                    <field name="top_total_credit"/>
+                                    <field name="left_total_credit"/>
                                     <field name="width_total_credit"/>
+                                    <field name="height_total_credit"/>
+                                </group>
+                            </group>
+                            <group>
+                                <group string="User Reviewing">
+                                    <field name="set_user_reviewing"/>
+                                    <field name="user_reviewing" options="{'no_create': True}" attrs="{'invisible': [('set_user_reviewing', '=', False)]}"/>
+                                    <field name="top_user_reviewing" attrs="{'invisible': [('set_user_reviewing', '=', False)]}"/>
+                                    <field name="left_user_reviewing" attrs="{'invisible': [('set_user_reviewing', '=', False)]}"/>
+                                    <field name="width_user_reviewing" attrs="{'invisible': [('set_user_reviewing', '=', False)]}"/>
+                                    <field name="height_user_reviewing" attrs="{'invisible': [('set_user_reviewing', '=', False)]}"/>
+                                </group>
+                                <group string="User Validate">
+                                    <field name="set_user_validate"/>
+                                    <field name="user_validate" options="{'no_create': True}" attrs="{'invisible': [('set_user_validate', '=', False)]}"/>
+                                    <field name="top_user_validate" attrs="{'invisible': [('set_user_validate', '=', False)]}"/>
+                                    <field name="left_user_validate" attrs="{'invisible': [('set_user_validate', '=', False)]}"/>
+                                    <field name="width_user_validate" attrs="{'invisible': [('set_user_validate', '=', False)]}"/>
+                                    <field name="height_user_validate" attrs="{'invisible': [('set_user_validate', '=', False)]}"/>
                                 </group>
                             </group>
                         </page>
-                        <page name="info" string="Paperformat" groups="dynamic_check_print.group_formar_checkprint_manager">
+                        <page name="info" string="Paper format" groups="dynamic_check_print.group_formar_checkprint_manager">
                             <group>
                                 <field name="page_height"/>
                                 <field name="page_width"/>

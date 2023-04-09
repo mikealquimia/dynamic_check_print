@@ -19,7 +19,7 @@
     'currency': 'USD',
     'support': 'developmentalchemygx@gmail.com',
     'category': 'Account',
-    'version': '15.1.1',
+    'version': '15.2.1',
     'data': [
         'security/dynamic_check_print.xml',
         'security/ir.model.access.csv',
