@@ -12,7 +12,7 @@
     Create and configure checks to print from Odoo
     Créer et configurer des chèques à imprimer depuis Odoo
     """,
-    'author': "Gt Alchemy Development",
+    'author': "ACH Alchemical Code",
     'live_test_url': 'https://youtu.be/QsPxF8xqlUw',
     'license': 'LGPL-3',
     'price': 35.00,
