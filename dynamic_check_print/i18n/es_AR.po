@@ -1,0 +1,883 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* dynamic_check_print
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-04-09 19:47+0000\n"
+"PO-Revision-Date: 2023-04-09 13:53-0600\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"X-Generator: Poedit 3.2.2\n"
+
+#. module: dynamic_check_print
+#: model:ir.model.fields.selection,name:dynamic_check_print.selection__format_check_print__type_date__mix0
+msgid "13 of January, 1993"
+msgstr "13 de Enero de 1993"
+
+#. module: dynamic_check_print
+#: model:ir.model.fields.selection,name:dynamic_check_print.selection__format_check_print__type_date__simple
+msgid "13/01/1993"
+msgstr "13/01/1993"
+
+#. module: dynamic_check_print
+#: model:ir.model.fields.selection,name:dynamic_check_print.selection__format_check_print__text_transform_amount_letters__uppercase
+#: model:ir.model.fields.selection,name:dynamic_check_print.selection__format_check_print__text_transform_date__uppercase
+#: model:ir.model.fields.selection,name:dynamic_check_print.selection__format_check_print__text_transform_partner__uppercase
+msgid "ALL LETTERS IN CAPITAL LETTERS"
+msgstr "TODAS LAS LETRAS EN MAYÚSCULAS"
+
+#. module: dynamic_check_print
+#: model:ir.model.fields,field_description:dynamic_check_print.field_format_check_print__access_warning
+msgid "Access warning"
+msgstr "Acceso restringido"
+
+#. module: dynamic_check_print
+#: model_terms:ir.ui.view,arch_db:dynamic_check_print.format_checkprint_form
+msgid "Account Move"
+msgstr "Asiento Contable"
+
+#. module: dynamic_check_print
+#: model:ir.model.fields,field_description:dynamic_check_print.field_format_check_print__account_move
+msgid "Account move"
+msgstr "Asiento contable"
+
+#. module: dynamic_check_print
+#: model:ir.model.fields,field_description:dynamic_check_print.field_format_check_print__message_needaction
+msgid "Action Needed"
+msgstr "Acción requerida"
+
+#. module: dynamic_check_print
+#: model:ir.model.fields,field_description:dynamic_check_print.field_format_check_print__activity_ids
+msgid "Activities"
+msgstr "Actividades"
+
+#. module: dynamic_check_print
+#: model:ir.model.fields,field_description:dynamic_check_print.field_format_check_print__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "Actividad con excepción"
+
+#. module: dynamic_check_print
+#: model:ir.model.fields,field_description:dynamic_check_print.field_format_check_print__activity_state
+msgid "Activity State"
+msgstr "Estado de la actividad"
+
+#. module: dynamic_check_print
+#: model:ir.model.fields,field_description:dynamic_check_print.field_format_check_print__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "Actividad tipo Icono"
+
+#. module: dynamic_check_print
+#: model:ir.model.fields.selection,name:dynamic_check_print.selection__format_check_print__currency_amount__after
+msgid "After amount"
+msgstr "Después de la cantidad"
+
+#. module: dynamic_check_print
+#: model:ir.model.fields,field_description:dynamic_check_print.field_format_check_print__amount
+#: model_terms:ir.ui.view,arch_db:dynamic_check_print.format_checkprint_form
+msgid "Amount"
+msgstr "Cantidad"
+
+#. module: dynamic_check_print
+#: model:ir.model.fields,field_description:dynamic_check_print.field_format_check_print__amount_letters
+#: model_terms:ir.ui.view,arch_db:dynamic_check_print.format_checkprint_form
+msgid "Amount in letters"
+msgstr "Cantidad en letras"
+
+#. module: dynamic_check_print
+#: model:ir.model.fields,field_description:dynamic_check_print.field_format_check_print__message_attachment_count
+msgid "Attachment Count"
+msgstr "Conteo de Adjuntos"
+
+#. module: dynamic_check_print
+#: model:ir.model.fields.selection,name:dynamic_check_print.selection__format_check_print__currency_amount__before
+#: model:ir.model.fields.selection,name:dynamic_check_print.selection__format_check_print__currency_amount_letter__before
+msgid "Before amount"
+msgstr "Antes del monto"
+
+#. module: dynamic_check_print
+#: model:ir.ui.menu,name:dynamic_check_print.menu_format_checkprint
+msgid "Check Print"
+msgstr "Cheque impreso"
+
+#. module: dynamic_check_print
+#: model:ir.model.fields,field_description:dynamic_check_print.field_account_bank_statement_import_journal_creation__checkprint_report
+#: model:ir.model.fields,field_description:dynamic_check_print.field_account_journal__checkprint_report
+msgid "Check Printing Format"
+msgstr "Formato de Cheques"
+
+#. module: dynamic_check_print
+#: model:ir.model.fields.selection,name:dynamic_check_print.selection__format_check_print__type_partner__company
+msgid "Company of Partner"
+msgstr "Compañía del contacto"
+
+#. module: dynamic_check_print
+#: model:ir.model.fields,field_description:dynamic_check_print.field_format_check_print__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: dynamic_check_print
+#: model:ir.model.fields,field_description:dynamic_check_print.field_format_check_print__create_date
+msgid "Created on"
+msgstr "Creado en"
+
+#. module: dynamic_check_print
+#: model:ir.model.fields,field_description:dynamic_check_print.field_format_check_print__currency_amount
+#: model:ir.model.fields,field_description:dynamic_check_print.field_format_check_print__currency_amount_letter
+msgid "Currency"
+msgstr "Moneda"
+
+#. module: dynamic_check_print
+#: model:ir.model.fields,help:dynamic_check_print.field_format_check_print__access_url
+msgid "Customer Portal URL"
+msgstr "Cliente Portal URL"
+
+#. module: dynamic_check_print
+#: model:ir.model.fields,field_description:dynamic_check_print.field_format_check_print__date
+#: model_terms:ir.ui.view,arch_db:dynamic_check_print.format_checkprint_form
+msgid "Date"
+msgstr "Fecha"
+
+#. module: dynamic_check_print
+#: model:ir.model.fields,field_description:dynamic_check_print.field_format_check_print__description
+#: model_terms:ir.ui.view,arch_db:dynamic_check_print.format_checkprint_form
+msgid "Description"
+msgstr "Descripción"
+
+#. module: dynamic_check_print
+#: model:ir.model.fields,field_description:dynamic_check_print.field_format_check_print__field_description
+msgid "Description field"
+msgstr "Campo de descripción"
+
+#. module: dynamic_check_print
+#: model:ir.model.fields,field_description:dynamic_check_print.field_format_check_print__fields_description
+msgid "Description fields"
+msgstr "Campos de descripción"
+
+#. module: dynamic_check_print
+#: model:ir.model.fields,field_description:dynamic_check_print.field_format_check_print__display_name
+msgid "Display Name"
+msgstr "Nombre mostrado"
+
+#. module: dynamic_check_print
+#: model:ir.model.fields.selection,name:dynamic_check_print.selection__format_check_print__state__done
+msgid "Done"
+msgstr "Hecho"
+
+#. module: dynamic_check_print
+#: model:ir.model.fields.selection,name:dynamic_check_print.selection__format_check_print__state__draft
+msgid "Draft"
+msgstr "Borrador"
+
+#. module: dynamic_check_print
+#: model:ir.model.fields.selection,name:dynamic_check_print.selection__format_check_print__description__payment
+msgid "Field in Payment"
+msgstr "Campo del Pago"
+
+#. module: dynamic_check_print
+#: model:ir.model.fields,field_description:dynamic_check_print.field_format_check_print__date_field
+msgid "Field to Date"
+msgstr "Campo para Fecha"
+
+#. module: dynamic_check_print
+#: model:ir.model.fields.selection,name:dynamic_check_print.selection__format_check_print__description__invoices
+msgid "Fields in Invoice(s)"
+msgstr "Campos en factura(s)"
+
+#. module: dynamic_check_print
+#: model:ir.model.fields.selection,name:dynamic_check_print.selection__format_check_print__text_transform_amount_letters__capitalize
+#: model:ir.model.fields.selection,name:dynamic_check_print.selection__format_check_print__text_transform_date__capitalize
+#: model:ir.model.fields.selection,name:dynamic_check_print.selection__format_check_print__text_transform_partner__capitalize
+msgid "First Letter Of Each Word Capitalized"
+msgstr "Primer Letra en Mayuscula"
+
+#. module: dynamic_check_print
+#: model:ir.model.fields,field_description:dynamic_check_print.field_format_check_print__message_follower_ids
+msgid "Followers"
+msgstr "Seguidores"
+
+#. module: dynamic_check_print
+#: model:ir.model.fields,field_description:dynamic_check_print.field_format_check_print__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "Seguidores (Contactos)"
+
+#. module: dynamic_check_print
+#: model:ir.model.fields,help:dynamic_check_print.field_format_check_print__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr "Fuente"
+
+#. module: dynamic_check_print
+#: model:ir.actions.act_window,name:dynamic_check_print.action_format_check_print
+#: model_terms:ir.ui.view,arch_db:dynamic_check_print.format_checkprint_form
+#: model_terms:ir.ui.view,arch_db:dynamic_check_print.format_checkprint_tree
+msgid "Format Check Print"
+msgstr "Formato de Cheques"
+
+#. module: dynamic_check_print
+#: model:ir.model,name:dynamic_check_print.model_format_check_print
+msgid "Format to Check Print"
+msgstr "Formatos de Cheques"
+
+#. module: dynamic_check_print
+#: model:ir.model.fields,field_description:dynamic_check_print.field_format_check_print__has_message
+msgid "Has Message"
+msgstr "Tiene mensaje"
+
+#. module: dynamic_check_print
+#: model:ir.model.fields,field_description:dynamic_check_print.field_format_check_print__height_amount
+msgid "Height Amount (cm)"
+msgstr "Alto de Monto (cm)"
+
+#. module: dynamic_check_print
+#: model:ir.model.fields,field_description:dynamic_check_print.field_format_check_print__height_amount_letters
+msgid "Height Amount in letter (cm)"
+msgstr "Alto de Monto en letras (cm)"
+
+#. module: dynamic_check_print
+#: model:ir.model.fields,field_description:dynamic_check_print.field_format_check_print__height_date
+msgid "Height Date (cm)"
+msgstr "Alto de Fecha (cm)"
+
+#. module: dynamic_check_print
+#: model:ir.model.fields,field_description:dynamic_check_print.field_format_check_print__height_description
+msgid "Height Description (cm)"
+msgstr "Alto de Descripción (cm)"
+
+#. module: dynamic_check_print
+#: model:ir.model.fields,field_description:dynamic_check_print.field_format_check_print__height_account_move
+msgid "Height Line Table Account Move (cm)"
+msgstr "Alto de línea de asiento contable (cm)"
+
+#. module: dynamic_check_print
+#: model:ir.model.fields,field_description:dynamic_check_print.field_format_check_print__height_negotiable
+msgid "Height Not Negotiable (cm)"
+msgstr "Alto de No Negociable (cm)"
+
+#. module: dynamic_check_print
+#: model:ir.model.fields,field_description:dynamic_check_print.field_format_check_print__height_partner
+msgid "Height Partner (cm)"
+msgstr "Alto de Contacto (cm)"
+
+#. module: dynamic_check_print
+#: model:ir.model.fields,field_description:dynamic_check_print.field_format_check_print__height_total_credit
+msgid "Height Total Credit (cm)"
+msgstr "Alto de total crédito"
+
+#. module: dynamic_check_print
+#: model:ir.model.fields,field_description:dynamic_check_print.field_format_check_print__height_total_debit
+msgid "Height Total Debit (cm)"
+msgstr "Alto de total débito"
+
+#. module: dynamic_check_print
+#: model:ir.model.fields,field_description:dynamic_check_print.field_format_check_print__height_user_reviewing
+#: model:ir.model.fields,field_description:dynamic_check_print.field_format_check_print__height_user_validate
+msgid "Height User (cm)"
+msgstr "Alto de Usuario (cm)"
+
+#. module: dynamic_check_print
+#: model:ir.model.fields,field_description:dynamic_check_print.field_format_check_print__id
+msgid "ID"
+msgstr "ID"
+
+#. module: dynamic_check_print
+#: model:ir.model.fields,field_description:dynamic_check_print.field_format_check_print__activity_exception_icon
+msgid "Icon"
+msgstr "Icono"
+
+#. module: dynamic_check_print
+#: model:ir.model.fields,help:dynamic_check_print.field_format_check_print__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr "Icon para dedicar en actividad"
+
+#. module: dynamic_check_print
+#: model:ir.model.fields,help:dynamic_check_print.field_format_check_print__message_needaction
+#: model:ir.model.fields,help:dynamic_check_print.field_format_check_print__message_unread
+msgid "If checked, new messages require your attention."
+msgstr "Tienes nuevos mensajes para tu atención"
+
+#. module: dynamic_check_print
+#: model:ir.model.fields,help:dynamic_check_print.field_format_check_print__message_has_error
+#: model:ir.model.fields,help:dynamic_check_print.field_format_check_print__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr "Revisa, algunos mensajes contiene error"
+
+#. module: dynamic_check_print
+#: model:ir.model.fields,field_description:dynamic_check_print.field_format_check_print__message_is_follower
+msgid "Is Follower"
+msgstr "Es seguidor"
+
+#. module: dynamic_check_print
+#: model:ir.model.fields.selection,name:dynamic_check_print.selection__format_check_print__type_date__mix1
+msgid "January 13, 1993"
+msgstr "Enero 13 ,1993"
+
+#. module: dynamic_check_print
+#: model:ir.model,name:dynamic_check_print.model_account_journal
+#: model:ir.model.fields,field_description:dynamic_check_print.field_format_check_print__journal_id
+msgid "Journal"
+msgstr "Diario"
+
+#. module: dynamic_check_print
+#: model:ir.model.fields.selection,name:dynamic_check_print.selection__format_check_print__orientation__landscape
+msgid "Landscape"
+msgstr "Horizontal"
+
+#. module: dynamic_check_print
+#: model:ir.model.fields,field_description:dynamic_check_print.field_format_check_print____last_update
+msgid "Last Modified on"
+msgstr "Ultima modificación en"
+
+#. module: dynamic_check_print
+#: model:ir.model.fields,field_description:dynamic_check_print.field_format_check_print__write_uid
+msgid "Last Updated by"
+msgstr "Ultima actualización por"
+
+#. module: dynamic_check_print
+#: model:ir.model.fields,field_description:dynamic_check_print.field_format_check_print__write_date
+msgid "Last Updated on"
+msgstr "Ultima modificación en"
+
+#. module: dynamic_check_print
+#: model:ir.model.fields,field_description:dynamic_check_print.field_format_check_print__left_amount
+msgid "Left Amount (cm)"
+msgstr "Izquirda de Monto (cm)"
+
+#. module: dynamic_check_print
+#: model:ir.model.fields,field_description:dynamic_check_print.field_format_check_print__left_amount_letters
+msgid "Left Amount in letter (cm)"
+msgstr "Izquierda de monto en letras (cm)"
+
+#. module: dynamic_check_print
+#: model:ir.model.fields,field_description:dynamic_check_print.field_format_check_print__left_date
+msgid "Left Date (cm)"
+msgstr "Izquierda de fecha (cm)"
+
+#. module: dynamic_check_print
+#: model:ir.model.fields,field_description:dynamic_check_print.field_format_check_print__left_description
+msgid "Left Description (cm)"
+msgstr "Izquierda de Descripción (cm)"
+
+#. module: dynamic_check_print
+#: model:ir.model.fields,field_description:dynamic_check_print.field_format_check_print__left_negotiable
+msgid "Left Not Negotiable (cm)"
+msgstr "Izquierda de no negociable (cm)"
+
+#. module: dynamic_check_print
+#: model:ir.model.fields,field_description:dynamic_check_print.field_format_check_print__left_partner
+msgid "Left Partner (cm)"
+msgstr "Izquierda de contacto (cm)"
+
+#. module: dynamic_check_print
+#: model:ir.model.fields,field_description:dynamic_check_print.field_format_check_print__left_account_move
+msgid "Left Table Account Move (cm)"
+msgstr "Izquierda de asiento contable"
+
+#. module: dynamic_check_print
+#: model:ir.model.fields,field_description:dynamic_check_print.field_format_check_print__left_total_credit
+msgid "Left Totals Credit (cm)"
+msgstr "Izquierda de total crédito"
+
+#. module: dynamic_check_print
+#: model:ir.model.fields,field_description:dynamic_check_print.field_format_check_print__left_total_debit
+msgid "Left Totals Debit (cm)"
+msgstr "Izquierda de total débito"
+
+#. module: dynamic_check_print
+#: model:ir.model.fields,field_description:dynamic_check_print.field_format_check_print__left_user_reviewing
+#: model:ir.model.fields,field_description:dynamic_check_print.field_format_check_print__left_user_validate
+msgid "Left User (cm)"
+msgstr "Izquierda de usuario (cm)"
+
+#. module: dynamic_check_print
+#: model_terms:ir.ui.view,arch_db:dynamic_check_print.format_checkprint_form
+msgid "Location"
+msgstr "Ubicación"
+
+#. module: dynamic_check_print
+#: model_terms:ir.ui.view,arch_db:dynamic_check_print.format_checkprint_form
+msgid "Location Account Move"
+msgstr "Localización asiento contable"
+
+#. module: dynamic_check_print
+#: model_terms:ir.ui.view,arch_db:dynamic_check_print.format_checkprint_form
+msgid "Location Description"
+msgstr "Ubicación de descripción"
+
+#. module: dynamic_check_print
+#: model:ir.model.fields,field_description:dynamic_check_print.field_format_check_print__message_main_attachment_id
+msgid "Main Attachment"
+msgstr "Adjuntos"
+
+#. module: dynamic_check_print
+#: model:res.groups,name:dynamic_check_print.group_formar_checkprint_manager
+msgid "Manager Format Check Print"
+msgstr "Administrador de Formatos de Cheque"
+
+#. module: dynamic_check_print
+#: model:ir.model.fields,field_description:dynamic_check_print.field_format_check_print__message_has_error
+msgid "Message Delivery error"
+msgstr "Mensajes con error"
+
+#. module: dynamic_check_print
+#: model:ir.model.fields,field_description:dynamic_check_print.field_format_check_print__message_ids
+msgid "Messages"
+msgstr "Mensaje"
+
+#. module: dynamic_check_print
+#: model:ir.model.fields,field_description:dynamic_check_print.field_format_check_print__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr "Mi Bitácora"
+
+#. module: dynamic_check_print
+#: model:ir.model.fields,field_description:dynamic_check_print.field_format_check_print__name
+msgid "Name"
+msgstr "Nombre"
+
+#. module: dynamic_check_print
+#: model:ir.model.fields,field_description:dynamic_check_print.field_format_check_print__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "Siguiente actividad"
+
+#. module: dynamic_check_print
+#: model:ir.model.fields,field_description:dynamic_check_print.field_format_check_print__activity_summary
+msgid "Next Activity Summary"
+msgstr "Siguiente actividad en Bitácora "
+
+#. module: dynamic_check_print
+#: model:ir.model.fields,field_description:dynamic_check_print.field_format_check_print__activity_type_id
+msgid "Next Activity Type"
+msgstr "Siguiente tipo de actividad"
+
+#. module: dynamic_check_print
+#: model:ir.model.fields.selection,name:dynamic_check_print.selection__format_check_print__description__none
+msgid "No Description"
+msgstr "Sin descripción"
+
+#. module: dynamic_check_print
+#: model:ir.model.fields.selection,name:dynamic_check_print.selection__format_check_print__currency_amount__none
+#: model:ir.model.fields.selection,name:dynamic_check_print.selection__format_check_print__currency_amount_letter__none
+msgid "No currency"
+msgstr "Sin moneda"
+
+#. module: dynamic_check_print
+#: model:ir.model.fields,field_description:dynamic_check_print.field_format_check_print__negotiable
+#: model_terms:ir.ui.view,arch_db:dynamic_check_print.format_checkprint_form
+msgid "Not Negotiable"
+msgstr "No negociable"
+
+#. module: dynamic_check_print
+#: model:ir.model.fields,field_description:dynamic_check_print.field_format_check_print__message_needaction_counter
+msgid "Number of Actions"
+msgstr "Número de acciones"
+
+#. module: dynamic_check_print
+#: model:ir.model.fields,field_description:dynamic_check_print.field_format_check_print__message_has_error_counter
+msgid "Number of errors"
+msgstr "Número de errores"
+
+#. module: dynamic_check_print
+#: model:ir.model.fields,help:dynamic_check_print.field_format_check_print__message_needaction_counter
+msgid "Number of messages which requires an action"
+msgstr "Número de mensajes que requeren acción"
+
+#. module: dynamic_check_print
+#: model:ir.model.fields,help:dynamic_check_print.field_format_check_print__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "Número de mensajes con error"
+
+#. module: dynamic_check_print
+#: model:ir.model.fields,help:dynamic_check_print.field_format_check_print__message_unread_counter
+msgid "Number of unread messages"
+msgstr "Mensajes sin leer"
+
+#. module: dynamic_check_print
+#: model:ir.model.fields.selection,name:dynamic_check_print.selection__format_check_print__type_amount__simple
+#: model:ir.model.fields.selection,name:dynamic_check_print.selection__format_check_print__type_amount_letter__simple
+msgid "Only amount"
+msgstr "Solamente monto"
+
+#. module: dynamic_check_print
+#: model:ir.model.fields,field_description:dynamic_check_print.field_format_check_print__orientation
+msgid "Orientation"
+msgstr "Orientación"
+
+#. module: dynamic_check_print
+#: model:ir.model.fields,field_description:dynamic_check_print.field_format_check_print__page_height
+msgid "Page Height (mm)"
+msgstr "Alto de página"
+
+#. module: dynamic_check_print
+#: model:ir.model.fields,field_description:dynamic_check_print.field_format_check_print__page_width
+msgid "Page Width (mm)"
+msgstr "Ancho de página"
+
+#. module: dynamic_check_print
+#: model:ir.model.fields,field_description:dynamic_check_print.field_format_check_print__paper_format
+msgid "Paper Format"
+msgstr "Formato de papel"
+
+#. module: dynamic_check_print
+#: model_terms:ir.ui.view,arch_db:dynamic_check_print.format_checkprint_form
+msgid "Paper format"
+msgstr "Formato de papel"
+
+#. module: dynamic_check_print
+#: model:ir.model.fields,field_description:dynamic_check_print.field_format_check_print__partner
+#: model_terms:ir.ui.view,arch_db:dynamic_check_print.format_checkprint_form
+msgid "Partner"
+msgstr "Contacto"
+
+#. module: dynamic_check_print
+#: model:ir.model.fields.selection,name:dynamic_check_print.selection__format_check_print__type_partner__direct
+msgid "Partner of Payment"
+msgstr "Contacto del pago"
+
+#. module: dynamic_check_print
+#: model:ir.model,name:dynamic_check_print.model_account_payment
+msgid "Payments"
+msgstr "Pagos"
+
+#. module: dynamic_check_print
+#: model_terms:ir.ui.view,arch_db:dynamic_check_print.format_checkprint_tree
+msgid "Payslip Input Name"
+msgstr "Nombre del formato de cheque"
+
+#. module: dynamic_check_print
+#: model:ir.model.fields,field_description:dynamic_check_print.field_format_check_print__access_url
+msgid "Portal Access URL"
+msgstr "Portal de Acceso URL"
+
+#. module: dynamic_check_print
+#: model:ir.model.fields.selection,name:dynamic_check_print.selection__format_check_print__orientation__portrait
+msgid "Portrait"
+msgstr "Vertical"
+
+#. module: dynamic_check_print
+#: model_terms:ir.ui.view,arch_db:dynamic_check_print.format_checkprint_form
+msgid "Properties"
+msgstr "Propiedades"
+
+#. module: dynamic_check_print
+#: model:ir.model.fields,field_description:dynamic_check_print.field_format_check_print__report_id
+msgid "Report"
+msgstr "Informe"
+
+#. module: dynamic_check_print
+#: model:ir.model.fields,field_description:dynamic_check_print.field_format_check_print__activity_user_id
+msgid "Responsible User"
+msgstr "Validado por"
+
+#. module: dynamic_check_print
+#: model:ir.model.fields,field_description:dynamic_check_print.field_format_check_print__user_reviewing
+msgid "Reviewing User"
+msgstr "Revisado por"
+
+#. module: dynamic_check_print
+#: model:ir.model.fields,field_description:dynamic_check_print.field_format_check_print__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr "Mensaje de error"
+
+#. module: dynamic_check_print
+#: model:ir.model.fields,field_description:dynamic_check_print.field_format_check_print__access_token
+msgid "Security Token"
+msgstr "Token de seguridad"
+
+#. module: dynamic_check_print
+#: model_terms:ir.ui.view,arch_db:dynamic_check_print.format_checkprint_form
+msgid "Set Done"
+msgstr "Confirmar"
+
+#. module: dynamic_check_print
+#: model_terms:ir.ui.view,arch_db:dynamic_check_print.format_checkprint_form
+msgid "Set Draft"
+msgstr "Establecer a borrador"
+
+#. module: dynamic_check_print
+#: model:ir.model.fields,field_description:dynamic_check_print.field_format_check_print__set_user_reviewing
+msgid "Set Reviewing User"
+msgstr "Establecer usuario de revisión"
+
+#. module: dynamic_check_print
+#: model:ir.model.fields,field_description:dynamic_check_print.field_format_check_print__set_user_validate
+msgid "Set Validate User"
+msgstr "Establecer usuario que valida"
+
+#. module: dynamic_check_print
+#: model:ir.model.fields,field_description:dynamic_check_print.field_format_check_print__state
+msgid "State"
+msgstr "Estado"
+
+#. module: dynamic_check_print
+#: model:ir.model.fields,help:dynamic_check_print.field_format_check_print__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+"Estado basado en actividades\n"
+"Atrasado: Fecha pasada\n"
+"Hoy: Actividades del día\n"
+"Planeadas: Actividades a futuro."
+
+#. module: dynamic_check_print
+#: model:ir.model.fields,field_description:dynamic_check_print.field_format_check_print__text_transform_amount_letters
+#: model:ir.model.fields,field_description:dynamic_check_print.field_format_check_print__text_transform_date
+#: model:ir.model.fields,field_description:dynamic_check_print.field_format_check_print__text_transform_partner
+msgid "Style Text"
+msgstr "Estilo de texto"
+
+#. module: dynamic_check_print
+#: model:ir.model.fields,field_description:dynamic_check_print.field_format_check_print__post_symbol
+#: model:ir.model.fields,field_description:dynamic_check_print.field_format_check_print__post_symbol_letter
+msgid "Symbol after amount"
+msgstr "Simbolo despues del monto"
+
+#. module: dynamic_check_print
+#: model:ir.model.fields,field_description:dynamic_check_print.field_format_check_print__pre_symbol
+#: model:ir.model.fields,field_description:dynamic_check_print.field_format_check_print__pre_symbol_letter
+msgid "Symbol before amount"
+msgstr "Simbolo antes del monto"
+
+#. module: dynamic_check_print
+#: model:ir.model.fields,help:dynamic_check_print.field_format_check_print__fields_description
+msgid "They will be separated by a comma"
+msgstr "Estarán separados por medio de una coma"
+
+#. module: dynamic_check_print
+#: model:ir.model.fields,field_description:dynamic_check_print.field_format_check_print__top_amount
+msgid "Top Amount (cm)"
+msgstr "Ubicación superior del monto (cm)"
+
+#. module: dynamic_check_print
+#: model:ir.model.fields,field_description:dynamic_check_print.field_format_check_print__top_amount_letters
+msgid "Top Amount in letter (cm)"
+msgstr "Ubicación superior del monto en letras (cm)"
+
+#. module: dynamic_check_print
+#: model:ir.model.fields,field_description:dynamic_check_print.field_format_check_print__top_date
+msgid "Top Date (cm)"
+msgstr "Ubicación superior de fecha (cm)"
+
+#. module: dynamic_check_print
+#: model:ir.model.fields,field_description:dynamic_check_print.field_format_check_print__top_description
+msgid "Top Description (cm)"
+msgstr "Ubicación superior de descripión (cm)"
+
+#. module: dynamic_check_print
+#: model:ir.model.fields,field_description:dynamic_check_print.field_format_check_print__top_negotiable
+msgid "Top Not Negotiable (cm)"
+msgstr "Ubicación superior del no negociable (cm)"
+
+#. module: dynamic_check_print
+#: model:ir.model.fields,field_description:dynamic_check_print.field_format_check_print__top_partner
+msgid "Top Partner (cm)"
+msgstr "Ubicación superior del contacto (cm)"
+
+#. module: dynamic_check_print
+#: model:ir.model.fields,field_description:dynamic_check_print.field_format_check_print__top_account_move
+msgid "Top Table Account Move (cm)"
+msgstr "Ubicación superior de asiento contable (cm)"
+
+#. module: dynamic_check_print
+#: model:ir.model.fields,field_description:dynamic_check_print.field_format_check_print__top_total_credit
+msgid "Top Totals Credit (cm)"
+msgstr "Ubicación superior de total crédito (cm)"
+
+#. module: dynamic_check_print
+#: model:ir.model.fields,field_description:dynamic_check_print.field_format_check_print__top_total_debit
+msgid "Top Totals Debit (cm)"
+msgstr "Ubicación superior total débito"
+
+#. module: dynamic_check_print
+#: model:ir.model.fields,field_description:dynamic_check_print.field_format_check_print__top_user_reviewing
+#: model:ir.model.fields,field_description:dynamic_check_print.field_format_check_print__top_user_validate
+msgid "Top User (cm)"
+msgstr "Ubicación superior de usuario (cm)"
+
+#. module: dynamic_check_print
+#: model_terms:ir.ui.view,arch_db:dynamic_check_print.format_checkprint_form
+msgid "Total Credit"
+msgstr "Total crédito"
+
+#. module: dynamic_check_print
+#: model:ir.model.fields,field_description:dynamic_check_print.field_format_check_print__total_account_move
+msgid "Totals"
+msgstr "Totales"
+
+#. module: dynamic_check_print
+#: model_terms:ir.ui.view,arch_db:dynamic_check_print.format_checkprint_form
+msgid "Totals Debit"
+msgstr "Total Débito"
+
+#. module: dynamic_check_print
+#: model:ir.model.fields,field_description:dynamic_check_print.field_format_check_print__type_amount
+msgid "Type of Amount"
+msgstr "Tipo de monto"
+
+#. module: dynamic_check_print
+#: model:ir.model.fields,field_description:dynamic_check_print.field_format_check_print__type_date
+msgid "Type of Date"
+msgstr "Tipo de fecha"
+
+#. module: dynamic_check_print
+#: model:ir.model.fields,field_description:dynamic_check_print.field_format_check_print__type_partner
+msgid "Type of Partner"
+msgstr "Tipo de contacto"
+
+#. module: dynamic_check_print
+#: model:ir.model.fields,field_description:dynamic_check_print.field_format_check_print__type_amount_letter
+msgid "Type of letters Amount"
+msgstr "Tipo de monto de letras"
+
+#. module: dynamic_check_print
+#: model:ir.model.fields,help:dynamic_check_print.field_format_check_print__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr "Tipo de error por actividad"
+
+#. module: dynamic_check_print
+#: model:ir.model.fields,field_description:dynamic_check_print.field_format_check_print__message_unread
+msgid "Unread Messages"
+msgstr "Mensajes sin leer"
+
+#. module: dynamic_check_print
+#: model:ir.model.fields,field_description:dynamic_check_print.field_format_check_print__message_unread_counter
+msgid "Unread Messages Counter"
+msgstr "Conteo de mensajes sin leer"
+
+#. module: dynamic_check_print
+#: model:res.groups,name:dynamic_check_print.group_formar_checkprint_user
+msgid "User Format Check Print"
+msgstr "Usuario de formato de cheques"
+
+#. module: dynamic_check_print
+#: model_terms:ir.ui.view,arch_db:dynamic_check_print.format_checkprint_form
+msgid "User Reviewing"
+msgstr "Revisado por"
+
+#. module: dynamic_check_print
+#: model_terms:ir.ui.view,arch_db:dynamic_check_print.format_checkprint_form
+msgid "User Validate"
+msgstr "Validado por"
+
+#. module: dynamic_check_print
+#: model:ir.model.fields,field_description:dynamic_check_print.field_format_check_print__user_validate
+msgid "Validate User"
+msgstr "Usuario Validador"
+
+#. module: dynamic_check_print
+#: model:ir.model.fields,field_description:dynamic_check_print.field_format_check_print__view_id
+msgid "View"
+msgstr "Vista del informe"
+
+#. module: dynamic_check_print
+#: model:ir.model.fields,field_description:dynamic_check_print.field_format_check_print__voucher
+#: model_terms:ir.ui.view,arch_db:dynamic_check_print.format_checkprint_form
+msgid "Voucher"
+msgstr "Cheque"
+
+#. module: dynamic_check_print
+#: model:ir.model.fields,field_description:dynamic_check_print.field_format_check_print__website_message_ids
+msgid "Website Messages"
+msgstr "Mensajes de sitio web"
+
+#. module: dynamic_check_print
+#: model:ir.model.fields,help:dynamic_check_print.field_format_check_print__website_message_ids
+msgid "Website communication history"
+msgstr "Historial de mensajes de sitio web"
+
+#. module: dynamic_check_print
+#: model_terms:ir.ui.view,arch_db:dynamic_check_print.format_checkprint_form
+msgid "Width Account Move"
+msgstr "Ancho de asiento contable"
+
+#. module: dynamic_check_print
+#: model:ir.model.fields,field_description:dynamic_check_print.field_format_check_print__width_amount
+msgid "Width Amount (cm)"
+msgstr "Ancho  de monto (cm)"
+
+#. module: dynamic_check_print
+#: model:ir.model.fields,field_description:dynamic_check_print.field_format_check_print__width_amount_letters
+msgid "Width Amount in letter (cm)"
+msgstr "Ancho de monto en letras (cm)"
+
+#. module: dynamic_check_print
+#: model:ir.model.fields,field_description:dynamic_check_print.field_format_check_print__width_code
+msgid "Width Col Code (cm)"
+msgstr "Ancho columna de código (cm)"
+
+#. module: dynamic_check_print
+#: model:ir.model.fields,field_description:dynamic_check_print.field_format_check_print__width_credit
+msgid "Width Col Credit (cm)"
+msgstr "Ancho columna de crédito (cm)"
+
+#. module: dynamic_check_print
+#: model:ir.model.fields,field_description:dynamic_check_print.field_format_check_print__width_debit
+msgid "Width Col Debit (cm)"
+msgstr "Ancho columna débito (cm)"
+
+#. module: dynamic_check_print
+#: model:ir.model.fields,field_description:dynamic_check_print.field_format_check_print__width_name
+msgid "Width Col Name (cm)"
+msgstr "Ancho columna de nombre (cm)"
+
+#. module: dynamic_check_print
+#: model:ir.model.fields,field_description:dynamic_check_print.field_format_check_print__width_date
+msgid "Width Date (cm)"
+msgstr "Ancho de fecha (cm)"
+
+#. module: dynamic_check_print
+#: model:ir.model.fields,field_description:dynamic_check_print.field_format_check_print__width_description
+msgid "Width Description (cm)"
+msgstr "Ancho de descripción (cm)"
+
+#. module: dynamic_check_print
+#: model:ir.model.fields,field_description:dynamic_check_print.field_format_check_print__width_negotiable
+msgid "Width Not Negotiable (cm)"
+msgstr "Ancho  de no negociable (cm)"
+
+#. module: dynamic_check_print
+#: model:ir.model.fields,field_description:dynamic_check_print.field_format_check_print__width_partner
+msgid "Width Partner (cm)"
+msgstr "Ancho de contacto (cm)"
+
+#. module: dynamic_check_print
+#: model:ir.model.fields,field_description:dynamic_check_print.field_format_check_print__width_account_move
+msgid "Width Table Account Move (cm)"
+msgstr "Ancho de cuadro del asiento contable (cm)"
+
+#. module: dynamic_check_print
+#: model:ir.model.fields,field_description:dynamic_check_print.field_format_check_print__width_total_credit
+msgid "Width Total Credit (cm)"
+msgstr "Ancho de total crédito (cm)"
+
+#. module: dynamic_check_print
+#: model:ir.model.fields,field_description:dynamic_check_print.field_format_check_print__width_total_debit
+msgid "Width Total Debit (cm)"
+msgstr "Ancho de total débito (cm)"
+
+#. module: dynamic_check_print
+#: model:ir.model.fields,field_description:dynamic_check_print.field_format_check_print__width_user_reviewing
+#: model:ir.model.fields,field_description:dynamic_check_print.field_format_check_print__width_user_validate
+msgid "Width User (cm)"
+msgstr "Ancho de usuario (cm)"
+
+#. module: dynamic_check_print
+#: model:ir.model.fields.selection,name:dynamic_check_print.selection__format_check_print__type_amount__symbol
+#: model:ir.model.fields.selection,name:dynamic_check_print.selection__format_check_print__type_amount_letter__symbol
+msgid "With symbol(s)"
+msgstr "Con símbolo(s)"
+
+#. module: dynamic_check_print
+#: model:ir.model.fields.selection,name:dynamic_check_print.selection__format_check_print__text_transform_amount_letters__lowercase
+#: model:ir.model.fields.selection,name:dynamic_check_print.selection__format_check_print__text_transform_date__lowercase
+#: model:ir.model.fields.selection,name:dynamic_check_print.selection__format_check_print__text_transform_partner__lowercase
+msgid "all letters in lowercase"
+msgstr "todas las letras en minúsculas"

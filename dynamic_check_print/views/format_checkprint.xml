@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="format_checkprint_tree" model="ir.ui.view">
+        <field name="name">Format Check Print Tree</field>
+        <field name="model">format.check_print</field>
+        <field eval="20" name="priority"/>
+        <field name="arch" type="xml">
+            <tree string="Format Check Print">
+                <field name="name" placeholder="Payslip Input Name"/>
+                <field name="journal_id"/>
+                <field name="state" />
+            </tree>
+        </field>
+    </record>
+
+    <record id="format_checkprint_form" model="ir.ui.view">
+        <field name="name">Format Check Print Form</field>
+        <field name="model">format.check_print</field>
+        <field name="arch" type="xml">
+            <form string="Format Check Print">
+                <header>
+                    <button string="Set Draft" name="set_draft" type="object" states="done"/>
+                    <button string="Set Done" name="set_done" type="object" states="draft"/>
+                    <field name="state" widget="statusbar"/>
+                </header>
+                <sheet>
+                    <div class="oe_title">
+                        <label for="name" class="oe_edit_only"/>
+                        <h1><field name="name" required="1" class="oe_inline"/></h1>
+                    </div>
+                    <group>        
+                        <group attrs="{'readonly': [('state', '=', 'done')]}">
+                            <field name="date"/>
+                            <field name="partner"/>
+                            <field name="amount"/>
+                        </group>
+                        <group attrs="{'readonly': [('state', '=', 'done')]}">
+                            <field name="amount_letters"/>
+                            <field name="negotiable"/>
+                            <field name="voucher"/>
+                        </group>
+                    </group>
+                    <notebook attrs="{'readonly': [('state', '=', 'done')]}">
+                        <page name="date" string="Date" attrs="{'invisible': [('date', '=', False)]}">
+                            <group>
+                                <group string="Location">
+                                    <field name="top_date"/>
+                                    <field name="left_date"/>
+                                    <field name="width_date"/>
+                                    <field name="height_date"/>
+                                </group>
+                                <group string="Properties">
+                                    <field name="type_date"/>
+                                    <field name="date_field" options="{'no_create': True}" attrs="{'required': [('date', '=', True)]}"/>
+                                    <field name="text_transform_date"/>
+                                </group>
+                            </group>
+                        </page>
+                        <page name="partner" string="Partner" attrs="{'invisible': [('partner', '=', False)]}">
+                            <group>
+                                <group string="Location">
+                                    <field name="top_partner"/>
+                                    <field name="left_partner"/>
+                                    <field name="width_partner"/>
+                                    <field name="height_partner"/>
+                                </group>
+                                <group string="Properties">
+                                    <field name="type_partner"/>
+                                    <field name="text_transform_partner"/>
+                                </group>
+                            </group>
+                        </page>
+                        <page name="amount" string="Amount" attrs="{'invisible': [('amount', '=', False)]}">
+                            <group>
+                                <group string="Location">
+                                    <field name="top_amount"/>
+                                    <field name="left_amount"/>
+                                    <field name="width_amount"/>
+                                    <field name="height_amount"/>
+                                </group>
+                                <group string="Properties">
+                                    <field name="type_amount"/>
+                                    <field name="pre_symbol" attrs="{'invisible': [('type_amount', '=', 'simple')]}"/>
+                                    <field name="post_symbol" attrs="{'invisible': [('type_amount', '=', 'simple')]}"/>
+                                    <field name="currency_amount"/>
+                                </group>
+                            </group>
+                        </page>
+                        <page name="amount_letters" string="Amount in letters" attrs="{'invisible': [('amount_letters', '=', False)]}">
+                            <group>
+                                <group string="Location">
+                                    <field name="top_amount_letters"/>
+                                    <field name="left_amount_letters"/>
+                                    <field name="width_amount_letters"/>
+                                    <field name="height_amount_letters"/>
+                                </group>
+                                <group string="Properties">
+                                    <field name="text_transform_amount_letters"/>
+                                    <field name="type_amount_letter"/>
+                                    <field name="pre_symbol_letter" attrs="{'invisible': [('type_amount_letter', '=', 'simple')]}"/>
+                                    <field name="post_symbol_letter" attrs="{'invisible': [('type_amount_letter', '=', 'simple')]}"/>
+                                    <field name="currency_amount_letter"/>
+                                </group>
+                            </group>
+                        </page>
+                        <page name="negotiable" string="Not Negotiable" attrs="{'invisible': [('negotiable', '=', False)]}">
+                            <group>
+                                <group string="Location">
+                                    <field name="top_negotiable"/>
+                                    <field name="left_negotiable"/>
+                                    <field name="width_negotiable"/>
+                                    <field name="height_negotiable"/>
+                                </group>
+                                <group>
+                                    <field name="field_no_negotiable"/>
+                                </group>
+                            </group>
+                        </page>
+                        <page name="voucher" string="Voucher" attrs="{'invisible': [('voucher', '=', False)]}">
+                            <group>
+                                <group string="Description">
+                                    <field name="description"/>
+                                    <field name="fields_description" options="{'no_create': True}" widget="many2many_tags" attrs="{'invisible': [('description', '!=', 'invoices')]}"/>
+                                    <field name="field_description" options="{'no_create': True}" attrs="{'invisible': [('description', '!=', 'payment')]}"/>
+                                </group>
+                                <group string="Location Description" attrs="{'invisible': [('description', '=', 'none')]}">
+                                    <field name="top_description"/>
+                                    <field name="left_description"/>
+                                    <field name="width_description"/>
+                                    <field name="height_description"/>
+                                </group>
+                            </group>
+                            <group>
+                                <group string="Account Move">
+                                    <field name="account_move"/>
+                                    <field name="total_account_move" attrs="{'invisible': [('account_move', '=', False)]}"/>
+                                </group>
+                                <group string="Location Account Move" attrs="{'invisible': [('account_move', '=', False)]}">
+                                    <field name="top_account_move"/>
+                                    <field name="left_account_move"/>
+                                    <field name="width_account_move"/>
+                                    <field name="height_account_move"/>
+                                    <separator string="Width Account Move"/>
+                                    <field name="width_code"/>
+                                    <field name="width_name"/>
+                                    <field name="width_credit"/>
+                                    <field name="width_debit"/>
+                                </group>
+                            </group>
+                            <group attrs="{'invisible': [('total_account_move', '=', False)]}">
+                                <group string="Totals Debit">
+                                    <field name="top_total_debit"/>
+                                    <field name="left_total_debit"/>
+                                    <field name="width_total_debit"/>
+                                    <field name="height_total_debit"/>
+                                </group>
+                                <group string="Total Credit">
+                                    <field name="top_total_credit"/>
+                                    <field name="left_total_credit"/>
+                                    <field name="width_total_credit"/>
+                                    <field name="height_total_credit"/>
+                                </group>
+                            </group>
+                            <group>
+                                <group string="User Reviewing">
+                                    <field name="set_user_reviewing"/>
+                                    <field name="user_reviewing" options="{'no_create': True}" attrs="{'invisible': [('set_user_reviewing', '=', False)]}"/>
+                                    <field name="top_user_reviewing" attrs="{'invisible': [('set_user_reviewing', '=', False)]}"/>
+                                    <field name="left_user_reviewing" attrs="{'invisible': [('set_user_reviewing', '=', False)]}"/>
+                                    <field name="width_user_reviewing" attrs="{'invisible': [('set_user_reviewing', '=', False)]}"/>
+                                    <field name="height_user_reviewing" attrs="{'invisible': [('set_user_reviewing', '=', False)]}"/>
+                                </group>
+                                <group string="User Validate">
+                                    <field name="set_user_validate"/>
+                                    <field name="user_validate" options="{'no_create': True}" attrs="{'invisible': [('set_user_validate', '=', False)]}"/>
+                                    <field name="top_user_validate" attrs="{'invisible': [('set_user_validate', '=', False)]}"/>
+                                    <field name="left_user_validate" attrs="{'invisible': [('set_user_validate', '=', False)]}"/>
+                                    <field name="width_user_validate" attrs="{'invisible': [('set_user_validate', '=', False)]}"/>
+                                    <field name="height_user_validate" attrs="{'invisible': [('set_user_validate', '=', False)]}"/>
+                                </group>
+                            </group>
+                        </page>
+                        <page name="info" string="Paper format" groups="dynamic_check_print.group_formar_checkprint_manager">
+                            <group>
+                                <field name="page_height"/>
+                                <field name="page_width"/>
+                                <field name="orientation"/>
+                                <field name="paper_format" readonly="1"/>
+                                <field name="journal_id" readonly="1" widget="many2many_tags"/>
+                                <field name="report_id" readonly="1"/>
+                                <field name="view_id" readonly="1"/>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+                <div class="o_attachment_preview"/>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" groups="base.group_user"/>
+                        <field name="activity_ids"/>
+                        <field name="message_ids"/>
+                    </div>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_format_check_print" model="ir.actions.act_window">
+        <field name="name">Format Check Print</field>
+        <field name="res_model">format.check_print</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_format_checkprint"
+                name="Check Print"
+                action="dynamic_check_print.action_format_check_print"
+                parent="account.menu_finance_configuration"
+                sequence="10"/>
+
+</odoo>
