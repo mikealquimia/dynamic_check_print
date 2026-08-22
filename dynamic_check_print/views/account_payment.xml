@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="account_payment_format_checkprint_form_inherit" model="ir.ui.view">
+        <field name="name">Format Check Print</field>
+        <field name="model">account.payment</field>
+        <field name="inherit_id" ref="account_check_printing.view_account_payment_form_inherited"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='check_number']" position="after">
+                <field name="no_negociable" invisible="not show_check_number"/>
+            </xpath>
+            <!-- Odoo 19.0 hides the native "Print Check" button unless a core
+                 check-layout module (e.g. l10n_us_check_printing) is installed,
+                 via check_layout_available. Our print_checks() override
+                 doesn't depend on that field at all - it uses the journal's
+                 own checkprint_report format instead - so drop that condition
+                 here to keep the button available. -->
+            <xpath expr="//button[@name='print_checks']" position="attributes">
+                <attribute name="invisible">payment_method_code != 'check_printing' or is_sent</attribute>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

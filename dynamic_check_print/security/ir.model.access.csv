@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_format_check_print_manager,format.check_print.manager,model_format_check_print,dynamic_check_print.group_formar_checkprint_manager,1,1,1,1
+access_format_check_print_user,format.check_print.user,model_format_check_print,dynamic_check_print.group_formar_checkprint_user,1,0,0,0
