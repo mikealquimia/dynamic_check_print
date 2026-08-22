@@ -1,13 +1,72 @@
 <section class="oe_container">
-    <div class="oe_row oe_spaced">
-        <h2 class="oe_slogan" style="color:#875A7B;">Signature in Stock Piking</h2>
-        <p class="oe_mt32 text-center">
-			You can sign your orders to have tracking control and responsibility
-		</p>
-    </div>
-</section>
 
-<section class="oe_container oe_dark">
+    <div class="oe_row oe_spaced">
+        <h2 class="oe_slogan" style="color:#875A7B;">Check Printing Format</h2>
+        <p class="oe_mt32 text-center">
+            Design and print your own check layout directly from Odoo. Set exact coordinates for the date, partner, amount, amount in words and voucher detail, and print checks straight from your vendor payments.
+        </p>
+    </div>
+
+    <div class="oe_row oe_spaced">
+        <div class="oe_span12">
+            <h4 class="oe_mt32 oe_mb8 text-center">
+                <b>Step 1 - Create a check format</b>
+            </h4>
+            <p class="oe_mt32 text-center">
+                Go to Accounting/Invoicing &gt; Configuration &gt; Check Print and create a new format.
+            </p>
+            <img class="oe_picture oe_screenshot" src="screenshot_menu.png"/>
+        </div>
+    </div>
+
+    <div class="oe_row oe_spaced">
+        <div class="oe_span12">
+            <h4 class="oe_mt32 oe_mb8 text-center">
+                <b>Step 2 - Configure date, partner, amount and voucher fields</b>
+            </h4>
+            <p class="oe_mt32 text-center">
+                Enable the blocks you need (Date, Partner, Amount, Amount in letters, Not Negotiable, Voucher) and set the position (top/left/width/height in cm), style and format of each one to match your physical check paper.
+            </p>
+            <img class="oe_picture oe_screenshot" src="screenshot_new_format.png"/>
+        </div>
+    </div>
+
+    <div class="oe_row oe_spaced">
+        <div class="oe_span12">
+            <h4 class="oe_mt32 oe_mb8 text-center">
+                <b>Step 3 - Set the format to Done</b>
+            </h4>
+            <p class="oe_mt32 text-center">
+                Click "Set Done" to generate the printable report, its QWeb view and paper format automatically - no XML/QWeb editing required.
+            </p>
+            <img class="oe_picture oe_screenshot" src="screenshot_format_done.png"/>
+        </div>
+    </div>
+
+    <div class="oe_row oe_spaced">
+        <div class="oe_span12">
+            <h4 class="oe_mt32 oe_mb8 text-center">
+                <b>Step 4 - Assign the format to a journal</b>
+            </h4>
+            <p class="oe_mt32 text-center">
+                In Configuration &gt; Journals, open your bank journal and select the "Check Printing Format" you just created.
+            </p>
+            <img class="oe_picture oe_screenshot" src="screenshot_journal_config.png"/>
+        </div>
+    </div>
+
+    <div class="oe_row oe_spaced">
+        <div class="oe_span12">
+            <h4 class="oe_mt32 oe_mb8 text-center">
+                <b>Step 5 - Print the check from the payment</b>
+            </h4>
+            <p class="oe_mt32 text-center">
+                Post a vendor payment with the "Checks" payment method and click "Print Check". The PDF is generated with your custom layout and the payment is marked as sent.
+            </p>
+            <img class="oe_picture oe_screenshot" src="screenshot_check_printed.png"/>
+        </div>
+    </div>
+
     <div class="oe_row oe_spaced">
         <h2 class="oe_slogan">Translated languages</h2>
         <div class="oe_span1 text-center">
@@ -28,84 +87,5 @@
             <img class="o_kanban_image" src="flag/ven.png"/>
         </div>
     </div>
-</section>
 
-<section class="oe_container">
-    <div class="oe_row oe_spaced">
-        <div class="oe_span12">
-            <h4 class="oe_mt32 oe_mb8 text-center">
-                <b>After Install:</b>
-            </h4>
-            <p class="oe_mt32 text-center">
-                Added "Check Print" menu item
-            </p> 
-            <img class="oe_picture oe_screenshot" src="dynamic_menu.png">
-        </div>
-    </div>
-</section>
-
-<section class="oe_container">
-    <div class="oe_row oe_spaced">
-        <div class="oe_span12">
-            <h4 class="oe_mt32 oe_mb8 text-center">
-                <b>Step 1:</b>
-            </h4>
-            <p class="oe_mt32 text-center"> 
-                Create a check template.
-            </p>
-            <p class="oe_mt32 text-center"> 
-                Set coordinates of the date, guide field for the payment date, style and type of date.
-            </p>
-            <img class="oe_picture oe_screenshot" src="dynamic_date.png">
-            <p class="oe_mt32 text-center"> 
-                Set Provider Coordinates and Writing Style.
-            </p>
-            <img class="oe_picture oe_screenshot" src="dynamic_partner.png">
-            <p class="oe_mt32 text-center"> 
-                Set Provider Coordinates and Writing Style.
-            </p>
-            <img class="oe_picture oe_screenshot" src="dynamic_partner.png">
-            <p class="oe_mt32 text-center"> 
-                You can establish the accounting entry of your payment in the check voucher, 
-                establishing totals, accounting account column widths and the description based 
-                on fields of the linked invoices or specific field of the payment.
-            </p>
-            <img class="oe_picture oe_screenshot" src="dynamic_voucher.png">
-            <p class="oe_mt32 text-center">
-                Set your paper size.
-            </p>
-            <img class="oe_picture oe_screenshot" src="dynamic_paper.png">
-        </div>
-    </div>
-</section>
-
-<section class="oe_container">
-    <div class="oe_row oe_spaced">
-        <div class="oe_span12">
-            <h4 class="oe_mt32 oe_mb8 text-center">
-                <b>Step 2:</b>
-            </h4>
-            <p class="oe_mt32 text-center">
-                set done the check template and refresh tab.
-            </p>
-            <img class="oe_picture oe_screenshot" src="dynamic_done.png">
-        </div>
-    </div>
-</section>
-
-<section class="oe_container">
-    <div class="oe_row oe_spaced">
-        <div class="oe_span12">
-            <h4 class="oe_mt32 oe_mb8 text-center">
-                <b>Step 3:</b>
-            </h4>
-            <p class="oe_mt32 text-center">
-                Go to your payment, click the middle button "Print", choose your check template, a pdf will be generated that you can use to print your check.
-            </p>
-            <img class="oe_picture oe_screenshot" src="dynamic_payment.png">
-        </div>
-    </div>
-</section>
-
-<section class="oe_container oe_separator">
 </section>

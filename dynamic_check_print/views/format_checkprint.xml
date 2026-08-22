@@ -20,8 +20,8 @@
         <field name="arch" type="xml">
             <form string="Format Check Print">
                 <header>
-                    <button string="Set Draft" name="set_draft" type="object" states="done"/>
-                    <button string="Set Done" name="set_done" type="object" states="draft"/>
+                    <button string="Set Draft" name="set_draft" type="object" invisible="state != 'done'"/>
+                    <button string="Set Done" name="set_done" type="object" invisible="state != 'draft'"/>
                     <field name="state" widget="statusbar"/>
                 </header>
                 <sheet>
@@ -29,20 +29,20 @@
                         <label for="name" class="oe_edit_only"/>
                         <h1><field name="name" required="1" class="oe_inline"/></h1>
                     </div>
-                    <group>        
-                        <group attrs="{'readonly': [('state', '=', 'done')]}">
+                    <group>
+                        <group readonly="state == 'done'">
                             <field name="date"/>
                             <field name="partner"/>
                             <field name="amount"/>
                         </group>
-                        <group attrs="{'readonly': [('state', '=', 'done')]}">
+                        <group readonly="state == 'done'">
                             <field name="amount_letters"/>
                             <field name="negotiable"/>
                             <field name="voucher"/>
                         </group>
                     </group>
-                    <notebook attrs="{'readonly': [('state', '=', 'done')]}">
-                        <page name="date" string="Date" attrs="{'invisible': [('date', '=', False)]}">
+                    <notebook readonly="state == 'done'">
+                        <page name="date" string="Date" invisible="not date">
                             <group>
                                 <group string="Location">
                                     <field name="top_date"/>
@@ -52,12 +52,12 @@
                                 </group>
                                 <group string="Properties">
                                     <field name="type_date"/>
-                                    <field name="date_field" options="{'no_create': True}" attrs="{'required': [('date', '=', True)]}"/>
+                                    <field name="date_field" options="{'no_create': True}" required="date"/>
                                     <field name="text_transform_date"/>
                                 </group>
                             </group>
                         </page>
-                        <page name="partner" string="Partner" attrs="{'invisible': [('partner', '=', False)]}">
+                        <page name="partner" string="Partner" invisible="not partner">
                             <group>
                                 <group string="Location">
                                     <field name="top_partner"/>
@@ -71,7 +71,7 @@
                                 </group>
                             </group>
                         </page>
-                        <page name="amount" string="Amount" attrs="{'invisible': [('amount', '=', False)]}">
+                        <page name="amount" string="Amount" invisible="not amount">
                             <group>
                                 <group string="Location">
                                     <field name="top_amount"/>
@@ -81,13 +81,13 @@
                                 </group>
                                 <group string="Properties">
                                     <field name="type_amount"/>
-                                    <field name="pre_symbol" attrs="{'invisible': [('type_amount', '=', 'simple')]}"/>
-                                    <field name="post_symbol" attrs="{'invisible': [('type_amount', '=', 'simple')]}"/>
+                                    <field name="pre_symbol" invisible="type_amount == 'simple'"/>
+                                    <field name="post_symbol" invisible="type_amount == 'simple'"/>
                                     <field name="currency_amount"/>
                                 </group>
                             </group>
                         </page>
-                        <page name="amount_letters" string="Amount in letters" attrs="{'invisible': [('amount_letters', '=', False)]}">
+                        <page name="amount_letters" string="Amount in letters" invisible="not amount_letters">
                             <group>
                                 <group string="Location">
                                     <field name="top_amount_letters"/>
@@ -98,13 +98,13 @@
                                 <group string="Properties">
                                     <field name="text_transform_amount_letters"/>
                                     <field name="type_amount_letter"/>
-                                    <field name="pre_symbol_letter" attrs="{'invisible': [('type_amount_letter', '=', 'simple')]}"/>
-                                    <field name="post_symbol_letter" attrs="{'invisible': [('type_amount_letter', '=', 'simple')]}"/>
+                                    <field name="pre_symbol_letter" invisible="type_amount_letter == 'simple'"/>
+                                    <field name="post_symbol_letter" invisible="type_amount_letter == 'simple'"/>
                                     <field name="currency_amount_letter"/>
                                 </group>
                             </group>
                         </page>
-                        <page name="negotiable" string="Not Negotiable" attrs="{'invisible': [('negotiable', '=', False)]}">
+                        <page name="negotiable" string="Not Negotiable" invisible="not negotiable">
                             <group>
                                 <group string="Location">
                                     <field name="top_negotiable"/>
@@ -117,14 +117,14 @@
                                 </group>
                             </group>
                         </page>
-                        <page name="voucher" string="Voucher" attrs="{'invisible': [('voucher', '=', False)]}">
+                        <page name="voucher" string="Voucher" invisible="not voucher">
                             <group>
                                 <group string="Description">
                                     <field name="description"/>
-                                    <field name="fields_description" options="{'no_create': True}" widget="many2many_tags" attrs="{'invisible': [('description', '!=', 'invoices')]}"/>
-                                    <field name="field_description" options="{'no_create': True}" attrs="{'invisible': [('description', '!=', 'payment')]}"/>
+                                    <field name="fields_description" options="{'no_create': True}" widget="many2many_tags" invisible="description != 'invoices'"/>
+                                    <field name="field_description" options="{'no_create': True}" invisible="description != 'payment'"/>
                                 </group>
-                                <group string="Location Description" attrs="{'invisible': [('description', '=', 'none')]}">
+                                <group string="Location Description" invisible="description == 'none'">
                                     <field name="top_description"/>
                                     <field name="left_description"/>
                                     <field name="width_description"/>
@@ -134,9 +134,9 @@
                             <group>
                                 <group string="Account Move">
                                     <field name="account_move"/>
-                                    <field name="total_account_move" attrs="{'invisible': [('account_move', '=', False)]}"/>
+                                    <field name="total_account_move" invisible="not account_move"/>
                                 </group>
-                                <group string="Location Account Move" attrs="{'invisible': [('account_move', '=', False)]}">
+                                <group string="Location Account Move" invisible="not account_move">
                                     <field name="top_account_move"/>
                                     <field name="left_account_move"/>
                                     <field name="width_account_move"/>
@@ -148,7 +148,7 @@
                                     <field name="width_debit"/>
                                 </group>
                             </group>
-                            <group attrs="{'invisible': [('total_account_move', '=', False)]}">
+                            <group invisible="not total_account_move">
                                 <group string="Totals Debit">
                                     <field name="top_total_debit"/>
                                     <field name="left_total_debit"/>
@@ -165,19 +165,19 @@
                             <group>
                                 <group string="User Reviewing">
                                     <field name="set_user_reviewing"/>
-                                    <field name="user_reviewing" options="{'no_create': True}" attrs="{'invisible': [('set_user_reviewing', '=', False)]}"/>
-                                    <field name="top_user_reviewing" attrs="{'invisible': [('set_user_reviewing', '=', False)]}"/>
-                                    <field name="left_user_reviewing" attrs="{'invisible': [('set_user_reviewing', '=', False)]}"/>
-                                    <field name="width_user_reviewing" attrs="{'invisible': [('set_user_reviewing', '=', False)]}"/>
-                                    <field name="height_user_reviewing" attrs="{'invisible': [('set_user_reviewing', '=', False)]}"/>
+                                    <field name="user_reviewing" options="{'no_create': True}" invisible="not set_user_reviewing"/>
+                                    <field name="top_user_reviewing" invisible="not set_user_reviewing"/>
+                                    <field name="left_user_reviewing" invisible="not set_user_reviewing"/>
+                                    <field name="width_user_reviewing" invisible="not set_user_reviewing"/>
+                                    <field name="height_user_reviewing" invisible="not set_user_reviewing"/>
                                 </group>
                                 <group string="User Validate">
                                     <field name="set_user_validate"/>
-                                    <field name="user_validate" options="{'no_create': True}" attrs="{'invisible': [('set_user_validate', '=', False)]}"/>
-                                    <field name="top_user_validate" attrs="{'invisible': [('set_user_validate', '=', False)]}"/>
-                                    <field name="left_user_validate" attrs="{'invisible': [('set_user_validate', '=', False)]}"/>
-                                    <field name="width_user_validate" attrs="{'invisible': [('set_user_validate', '=', False)]}"/>
-                                    <field name="height_user_validate" attrs="{'invisible': [('set_user_validate', '=', False)]}"/>
+                                    <field name="user_validate" options="{'no_create': True}" invisible="not set_user_validate"/>
+                                    <field name="top_user_validate" invisible="not set_user_validate"/>
+                                    <field name="left_user_validate" invisible="not set_user_validate"/>
+                                    <field name="width_user_validate" invisible="not set_user_validate"/>
+                                    <field name="height_user_validate" invisible="not set_user_validate"/>
                                 </group>
                             </group>
                         </page>
