@@ -159,7 +159,7 @@ class FormatCheckPrint(models.Model):
                 <t t-name="{xml_report_name}">
                     <t t-call="web.html_container">
                         <t t-foreach="docs" t-as="o">
-                            <t t-if="o.state == 'posted'" t-esc="o.check_do()"/>
+                            <t t-if="o.state in ('in_process', 'paid')" t-esc="o.check_do()"/>
                             <t t-esc="o.numbers_to_letters(o.amount)"/>
                             <div class="article">
                                 <div class="page" style="font-family:'cool_font'">

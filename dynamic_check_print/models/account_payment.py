@@ -21,7 +21,7 @@ class AccountPayment(models.Model):
 
     def check_do(self):
         for rec in self:
-            rec.write({'is_move_sent': True})
+            rec.write({'is_sent': True})
         return
 
     def action_post(self):
