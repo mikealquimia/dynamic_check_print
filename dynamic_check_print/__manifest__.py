@@ -26,6 +26,6 @@
         'views/account_journal.xml',
         'views/format_checkprint.xml',
     ],
-    'images': ['static/description/banner.gif'],
+    'images': ['static/description/banner.png'],
     'depends': ['account', 'account_check_printing'],
 }
