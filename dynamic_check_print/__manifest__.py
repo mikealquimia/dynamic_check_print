@@ -15,7 +15,7 @@
     'author': "ACH Alchemical Code",
     'live_test_url': 'https://youtu.be/QsPxF8xqlUw',
     'license': 'LGPL-3',
-    'price': 35.00,
+    'price': 15.00,
     'currency': 'USD',
     'support': 'developmentalchemygx@gmail.com',
     'category': 'Account',
