@@ -15,7 +15,7 @@
     'author': "ACH Alchemical Code",
     'website': 'https://apps.odoo.com/apps/modules/browse?author=ACH%20Alchemical%20Code',
     'license': 'OPL-1',
-    'price': 36.95,
+    'price': 15.00,
     'currency': 'USD',
     'support': 'mikealquimia@gmail.com',
     'category': 'Accounting/Payment',
